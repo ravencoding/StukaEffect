@@ -1,4 +1,4 @@
 StukaEffect
 ===========
 
-StukaEffect is 2D Effect Annimation Library created by ravencoding
+StukaEffect is 2D Effect Animation Library created by ravencoding
