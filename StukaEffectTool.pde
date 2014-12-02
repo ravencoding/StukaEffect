@@ -1,3 +1,9 @@
+/*
+ * StukaEffectの実装例のためのファイル.
+ * StukaEffectを導入する時は、このファイルは不要.
+ */
+
+
 public ImgList imgList;
 private StukaEffect stukaEffect;
 
