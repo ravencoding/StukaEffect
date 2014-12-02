@@ -6,6 +6,7 @@ void setup(){
   size(480, 480);
   imgList = new ImgList();
   stukaEffect = new StukaEffect();
+  //imageMode(CENTER);//座標をエフェクト画像の中心にする場合はCENTERを指定する.
   
   //test.
   stukaEffect.setEffect(Const.IMAGE_EXPLODE, 0, 0);
