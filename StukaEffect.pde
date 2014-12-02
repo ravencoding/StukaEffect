@@ -1,37 +1,47 @@
-public ImgList imgList;
-private EffectManager effectMgr;
+public class StukaEffect {
+  ArrayList <EffectAnimation>effectList;
+  private int chain = 1;
 
-void setup(){
-  frameRate(30);
-  size(480, 480);
-  imgList = new ImgList();
-  effectMgr = new EffectManager();
-  
-  //test.
-  effectMgr.setEffect(Const.IMAGE_EXPLODE, 0, 0);
-  effectMgr.setEffect(Const.IMAGE_EXPLODE, 100, 0);
-  effectMgr.setEffect(Const.IMAGE_EXPLODE, 200, 0);
-  effectMgr.setEffect(Const.IMAGE_MAGIC, 300, 0);
-}
+  public StukaEffect() {
+    this.effectList = new ArrayList();
+  }
 
-
-void draw(){
-  background(100);
-  effectMgr.effectPlay();
-}
-
-void mouseReleased() {
-  effectMgr.setEffect(Const.IMAGE_SLASH, mouseX, mouseY);
-}
+  /*
+   * 画像IDと座標でエフェクトを生成して、エフェクト描画キューに入れる.
+   */
+  public void setEffect(int imgID, int posx, int posy) {
+    EffectAnimation effect = new EffectAnimation();
+    effect.setUp(imgID, posx, posy);
+    this.effectList.add(effect);
+  }
 
 
+  /*
+   * effectListに追加されているエフェクトを1フレームだけ描画する。
+   */
+  public void effectPlay() {
+    if (this.effectList.size() > 0 ) {
+      for (int i=0; i < chain && i < this.effectList.size (); i++) {
+        this.effectList.get(i).draw();
+      }
+      effectReflesh();
+      chain++;
+    }else if (this.effectList.size() == 0){
+      chain = 1;
+    }
+  }
 
-void keyPressed() {
-  if (key == '1'){
-    effectMgr.setEffect(Const.IMAGE_EXPLODE, mouseX, mouseY);
-  }else if (key == '2'){
-    effectMgr.setEffect(Const.IMAGE_SLASH, mouseX, mouseY);
-  }else if (key == '3'){
-    effectMgr.setEffect(Const.IMAGE_MAGIC  , mouseX, mouseY);
+  /* 
+   * 再生が終了したエフェクトをArrayListからremoveする.
+   */
+  private void effectReflesh() {
+    for (int i = 0; i < this.effectList.size (); i++) {
+      if (this.effectList.get(i).stateId == 0) {
+          EffectAnimation tmp = this.effectList.get(i);
+//          stg.drawPanel(tmp.getX(), tmp.getY());//エフェクト終了後にパネルを描画.
+//          hero.drawImg();
+          this.effectList.remove(i);
+      }
+    }
   }
 }
