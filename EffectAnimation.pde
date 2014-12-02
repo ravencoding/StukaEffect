@@ -25,6 +25,11 @@ public class EffectAnimation {
     stateList[1].setImage(imgID);
     stateList[1].setPosition(posx, posy);
   }
+  public void setUp(int imgID, int posx, int posy, int chip) {
+    stateList[1].setImage(imgID);
+    stateList[1].setPosition(posx, posy);
+    stateList[1].setChipSize(chip);
+  }
   public int getX() {
     return stateList[1].getX();
   }

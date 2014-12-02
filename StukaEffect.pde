@@ -14,6 +14,15 @@ public class StukaEffect {
     effect.setUp(imgID, posx, posy);
     this.effectList.add(effect);
   }
+  
+  /*
+   * 画像IDと座標と描画時のCHIPサイズを指定してエフェクトを生成し、エフェクト描画キューに入れる.
+   */
+  public void setEffect(int imgID, int posx, int posy, int chip) {
+    EffectAnimation effect = new EffectAnimation();
+    effect.setUp(imgID, posx, posy, chip);
+    this.effectList.add(effect);
+  }
 
 
   /*
