@@ -1,3 +1,9 @@
+/*
+ * Const.java
+ *
+ * ゲーム定数保持専用クラス.
+ */
+
 public class Const {
   public static final int CHIP = 100;//setEffect()メソッドでChipサイズを指定しなかった場合のデフォルトサイズ.
   public static final int IMAGE_EXPLODE = 0;
