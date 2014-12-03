@@ -1,6 +1,5 @@
 public class StukaEffect {
   ArrayList <EffectAnimation>effectList;
-  private int chain = 1;
 
   public StukaEffect() {
     this.effectList = new ArrayList();
@@ -30,13 +29,10 @@ public class StukaEffect {
    */
   public void effectPlay() {
     if (this.effectList.size() > 0 ) {
-      for (int i=0; i < chain && i < this.effectList.size (); i++) {
+      for (int i=0; i < this.effectList.size (); i++) {
         this.effectList.get(i).draw();
       }
       effectReflesh();
-      chain++;
-    }else if (this.effectList.size() == 0){
-      chain = 1;
     }
   }
 
@@ -47,8 +43,6 @@ public class StukaEffect {
     for (int i = 0; i < this.effectList.size (); i++) {
       if (this.effectList.get(i).stateId == 0) {
           EffectAnimation tmp = this.effectList.get(i);
-//          stg.drawPanel(tmp.getX(), tmp.getY());//エフェクト終了後にパネルを描画.
-//          hero.drawImg();
           this.effectList.remove(i);
       }
     }

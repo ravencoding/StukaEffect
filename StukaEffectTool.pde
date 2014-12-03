@@ -1,4 +1,6 @@
 /*
+ * StukaEffectTool.pde
+ *
  * StukaEffectの実装例のためのファイル.
  * StukaEffectを導入する時は、このファイルは不要.
  */
@@ -27,6 +29,7 @@ void setup(){
 
 void draw(){
   background(100);
+  //stukaEffect.setEffect(Const.IMAGE_EXPLODE, (int)random(width), (int)random(height), (int)random(100)+20);
   stukaEffect.effectPlay();
 }
 

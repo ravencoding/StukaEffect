@@ -49,7 +49,7 @@ public class Effect implements State {
     this.drawChipSize = Const.CHIP;//初期値をセット.
   }
   public void setChipSize(int chip){
-    this.drawChipSize = chip;//指定があった場合はフィールドにセットされる.
+    this.drawChipSize = chip;//setEffect()メソッドでサイズ指定があった場合はフィールドにセットされる.
   }
 
   public int getX() {
