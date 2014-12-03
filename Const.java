@@ -1,5 +1,5 @@
 public class Const {
-  public static final int CHIP = 100;//Chipサイズを指定しなかった場合のデフォルトサイズ.
+  public static final int CHIP = 100;//setEffect()メソッドでChipサイズを指定しなかった場合のデフォルトサイズ.
   public static final int IMAGE_EXPLODE = 0;
   public static final int IMAGE_SLASH = 1;
   public static final int IMAGE_MAGIC = 2;
